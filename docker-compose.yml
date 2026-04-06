@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    container_name: finance-backend
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: 4000
+      JWT_SECRET: compose-local-secret
+    volumes:
+      - finance-data:/app/data
+
+volumes:
+  finance-data:
